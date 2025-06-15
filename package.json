@@ -1,6 +1,6 @@
 {
   "name": "ebac-store-mobile-tests",
-  "type": "module",
+  "type": "commonjs",
   "devDependencies": {
     "@wdio/allure-reporter": "^8.24.12",
     "@wdio/cli": "^8.26.1",
@@ -8,11 +8,15 @@
     "@wdio/mocha-framework": "^8.24.12",
     "@wdio/spec-reporter": "^8.24.12",
     "appium-uiautomator2-driver": "^2.34.2",
+    "dotenv": "^16.5.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "scripts": {
-    "test": "wdio run ./wdio.conf.js"
+    "test": "wdio run ./wdio.conf.cjs",
+    "test:ios:login": "wdio run ./wdio.conf.cjs --suite login",
+    "test:ios:product": "wdio run ./wdio.conf.cjs --suite product",
+    "test:ios:search": "wdio run ./wdio.conf.cjs --suite search"
   },
   "dependencies": {
     "allure-commandline": "^2.25.0"

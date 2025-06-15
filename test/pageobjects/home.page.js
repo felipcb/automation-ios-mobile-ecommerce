@@ -1,9 +1,10 @@
-import { $ } from '@wdio/globals'
+const { $ } = require('@wdio/globals')
 
 class HomePage {
 
-    async openMenu(menu){
-        await $(`id:tab-${menu}`).click()
+    async openMenu(){
+        await $('id:tab-Account').click()
+        
     }
 
 }
