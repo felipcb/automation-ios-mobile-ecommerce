@@ -1,4 +1,4 @@
-const { $ } = require('@wdio/globals');
+import { $ } from '@wdio/globals';
 
 class ProductPage {
   // Seleciona o produto "Circe Hooded Ice Fleece" na listagem

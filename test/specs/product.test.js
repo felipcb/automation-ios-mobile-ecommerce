@@ -1,6 +1,6 @@
-const { expect, driver } = require('@wdio/globals');
-const homePage = require('../pageobjects/home.page.js');
-const loginPage = require('../pageobjects/login.page.js');
+import { describe, it, expect} from '@wdio/globals';
+import homePage from '../pageobjects/home.page.js';
+import loginPage from '../pageobjects/login.page.js';
 
 
 

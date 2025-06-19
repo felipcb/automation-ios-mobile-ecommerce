@@ -1,4 +1,4 @@
-const { $ } = require('@wdio/globals')
+import { $ } from '@wdio/globals';
 
 class ProfilePage {
     async profileName (name){

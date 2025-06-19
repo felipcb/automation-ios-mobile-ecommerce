@@ -1,0 +1,32 @@
+name: EBAC CI Mobile
+
+on:
+  push:
+    branches: [ ci ]  # dispara quando houver push na branch 'ci'
+  workflow_dispatch:  # permite rodar manualmente pelo GitHub
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Setup do Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar Testes Mobile
+        run: npm run test:login
+
+      - name: Publicar Relatório
+        uses: peaceiris/actions-gh-pages@v3
+        if: always() # garante execução mesmo se o teste falhar
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report # ajuste se necessário

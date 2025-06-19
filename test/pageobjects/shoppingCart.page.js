@@ -1,4 +1,4 @@
-const { $ } = require('@wdio/globals');
+import { $ } from '@wdio/globals';
 
 class ShoppingCartPage {
   // Clica no ícone do carrinho no topo da página
